@@ -6,7 +6,7 @@ import {
   LabelList,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "./ChartCard";
+import ChartCard from "../layout/ChartCard";
 
 const data = [
   { value: 100, name: "Visit", fill: "#8884d8" },

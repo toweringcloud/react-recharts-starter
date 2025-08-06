@@ -1,6 +1,6 @@
 import React from "react";
 import { Treemap, ResponsiveContainer } from "recharts";
-import ChartCard from "./ChartCard";
+import ChartCard from "../layout/ChartCard";
 
 const data = [
   {

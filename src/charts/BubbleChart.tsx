@@ -10,7 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "./ChartCard";
+import ChartCard from "../layout/ChartCard";
 
 const data01 = [
   { x: 100, y: 200, z: 200 },

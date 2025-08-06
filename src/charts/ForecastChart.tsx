@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "./ChartCard";
+import ChartCard from "../layout/ChartCard";
 
 const data = [
   { name: "Q1", actual: 120, forecast: 120 },

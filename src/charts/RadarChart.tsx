@@ -8,7 +8,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "./ChartCard";
+import ChartCard from "../layout/ChartCard";
 
 const data = [
   { subject: "Math", A: 120, B: 110, fullMark: 150 },
