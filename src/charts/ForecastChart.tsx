@@ -9,7 +9,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { name: "Q1", actual: 120, forecast: 120 },
@@ -21,30 +20,23 @@ const data = [
 ];
 
 const KpiForecastChartExample: React.FC = () => (
-  <ChartCard title="Forecast Chart">
-    <ResponsiveContainer>
-      <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-        <XAxis dataKey="name" stroke="#A0AEC0" />
-        <YAxis stroke="#A0AEC0" />
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="actual"
-          stroke="#8884d8"
-          strokeWidth={2}
-        />
-        <Line
-          type="monotone"
-          dataKey="forecast"
-          stroke="#82ca9d"
-          strokeWidth={2}
-          strokeDasharray="5 5"
-        />
-      </LineChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <LineChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
+      <XAxis dataKey="name" stroke="#A0AEC0" />
+      <YAxis stroke="#A0AEC0" />
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+      <Legend />
+      <Line type="monotone" dataKey="actual" stroke="#8884d8" strokeWidth={2} />
+      <Line
+        type="monotone"
+        dataKey="forecast"
+        stroke="#82ca9d"
+        strokeWidth={2}
+        strokeDasharray="5 5"
+      />
+    </LineChart>
+  </ResponsiveContainer>
 );
 
 export default KpiForecastChartExample;

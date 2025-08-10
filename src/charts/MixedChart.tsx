@@ -11,7 +11,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { name: "Page A", uv: 590, pv: 800, amt: 1400 },
@@ -23,20 +22,18 @@ const data = [
 ];
 
 const MixedChartExample: React.FC = () => (
-  <ChartCard title="Mixed Chart (Bar, Line, Area)">
-    <ResponsiveContainer>
-      <ComposedChart data={data}>
-        <CartesianGrid stroke="#4A5568" />
-        <XAxis dataKey="name" stroke="#A0AEC0" />
-        <YAxis stroke="#A0AEC0" />
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-        <Legend />
-        <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-        <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-        <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-      </ComposedChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <ComposedChart data={data}>
+      <CartesianGrid stroke="#4A5568" />
+      <XAxis dataKey="name" stroke="#A0AEC0" />
+      <YAxis stroke="#A0AEC0" />
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+      <Legend />
+      <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
+      <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+      <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+    </ComposedChart>
+  </ResponsiveContainer>
 );
 
 export default MixedChartExample;

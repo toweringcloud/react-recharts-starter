@@ -9,7 +9,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { name: "Jan", revenue: 4000, cost: 2400 },
@@ -22,24 +21,22 @@ const data = [
 ];
 
 const LineChartExample: React.FC = () => (
-  <ChartCard title="Line Chart">
-    <ResponsiveContainer>
-      <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-        <XAxis dataKey="name" stroke="#A0AEC0" />
-        <YAxis stroke="#A0AEC0" />
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="revenue"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="cost" stroke="#82ca9d" />
-      </LineChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <LineChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
+      <XAxis dataKey="name" stroke="#A0AEC0" />
+      <YAxis stroke="#A0AEC0" />
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+      <Legend />
+      <Line
+        type="monotone"
+        dataKey="revenue"
+        stroke="#8884d8"
+        activeDot={{ r: 8 }}
+      />
+      <Line type="monotone" dataKey="cost" stroke="#82ca9d" />
+    </LineChart>
+  </ResponsiveContainer>
 );
 
 export default LineChartExample;

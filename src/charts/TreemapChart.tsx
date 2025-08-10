@@ -1,6 +1,5 @@
 import React from "react";
 import { Treemap, ResponsiveContainer } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   {
@@ -29,11 +28,9 @@ const data = [
 ];
 
 const TreemapExample: React.FC = () => (
-  <ChartCard title="Treemap Chart">
-    <ResponsiveContainer>
-      <Treemap data={data} dataKey="size" stroke="#fff" fill="#8884d8" />
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <Treemap data={data} dataKey="size" stroke="#fff" fill="#8884d8" />
+  </ResponsiveContainer>
 );
 
 export default TreemapExample;

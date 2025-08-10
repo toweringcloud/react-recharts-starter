@@ -10,7 +10,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data01 = [
   { x: 100, y: 200, z: 200 },
@@ -31,46 +30,39 @@ const data02 = [
 ];
 
 const BubbleChartExample: React.FC = () => (
-  <ChartCard title="Bubble Chart">
-    <ResponsiveContainer>
-      <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-        <CartesianGrid stroke="#4A5568" />
-        <XAxis
-          type="number"
-          dataKey="x"
-          name="stature"
-          unit="cm"
-          stroke="#A0AEC0"
-        />
-        <YAxis
-          type="number"
-          dataKey="y"
-          name="weight"
-          unit="kg"
-          stroke="#A0AEC0"
-        />
-        <ZAxis
-          type="number"
-          dataKey="z"
-          range={[60, 400]}
-          name="score"
-          unit="km"
-        />
-        <Tooltip
-          cursor={{ strokeDasharray: "3 3" }}
-          wrapperClassName="bg-gray-800 rounded"
-        />
-        <Legend />
-        <Scatter name="A school" data={data01} fill="#8884d8" shape="star" />
-        <Scatter
-          name="B school"
-          data={data02}
-          fill="#82ca9d"
-          shape="triangle"
-        />
-      </ScatterChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+      <CartesianGrid stroke="#4A5568" />
+      <XAxis
+        type="number"
+        dataKey="x"
+        name="stature"
+        unit="cm"
+        stroke="#A0AEC0"
+      />
+      <YAxis
+        type="number"
+        dataKey="y"
+        name="weight"
+        unit="kg"
+        stroke="#A0AEC0"
+      />
+      <ZAxis
+        type="number"
+        dataKey="z"
+        range={[60, 400]}
+        name="score"
+        unit="km"
+      />
+      <Tooltip
+        cursor={{ strokeDasharray: "3 3" }}
+        wrapperClassName="bg-gray-800 rounded"
+      />
+      <Legend />
+      <Scatter name="A school" data={data01} fill="#8884d8" shape="star" />
+      <Scatter name="B school" data={data02} fill="#82ca9d" shape="triangle" />
+    </ScatterChart>
+  </ResponsiveContainer>
 );
 
 export default BubbleChartExample;

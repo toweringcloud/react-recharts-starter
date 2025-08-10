@@ -9,7 +9,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { name: "Page A", uv: 4000, pv: 2400 },
@@ -22,19 +21,17 @@ const data = [
 ];
 
 const BarChartExample: React.FC = () => (
-  <ChartCard title="Bar Chart">
-    <ResponsiveContainer>
-      <BarChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-        <XAxis dataKey="name" stroke="#A0AEC0" />
-        <YAxis stroke="#A0AEC0" />
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-        <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <BarChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
+      <XAxis dataKey="name" stroke="#A0AEC0" />
+      <YAxis stroke="#A0AEC0" />
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+      <Legend />
+      <Bar dataKey="pv" fill="#8884d8" />
+      <Bar dataKey="uv" fill="#82ca9d" />
+    </BarChart>
+  </ResponsiveContainer>
 );
 
 export default BarChartExample;

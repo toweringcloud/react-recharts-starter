@@ -6,7 +6,6 @@ import {
   LabelList,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { value: 100, name: "Visit", fill: "#8884d8" },
@@ -17,21 +16,14 @@ const data = [
 ];
 
 const FunnelChartExample: React.FC = () => (
-  <ChartCard title="Funnel Chart">
-    <ResponsiveContainer>
-      <FunnelChart>
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-        <Funnel dataKey="value" data={data} isAnimationActive>
-          <LabelList
-            position="right"
-            fill="#fff"
-            stroke="none"
-            dataKey="name"
-          />
-        </Funnel>
-      </FunnelChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <FunnelChart>
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+      <Funnel dataKey="value" data={data} isAnimationActive>
+        <LabelList position="right" fill="#fff" stroke="none" dataKey="name" />
+      </Funnel>
+    </FunnelChart>
+  </ResponsiveContainer>
 );
 
 export default FunnelChartExample;

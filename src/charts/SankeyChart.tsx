@@ -1,6 +1,5 @@
 import React from "react";
 import { Sankey, Tooltip, ResponsiveContainer } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = {
   nodes: [
@@ -24,18 +23,16 @@ const data = {
 };
 
 const SankeyDiagramExample: React.FC = () => (
-  <ChartCard title="Sankey Diagram">
-    <ResponsiveContainer>
-      <Sankey
-        data={data}
-        nodePadding={50}
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-        link={{ stroke: "#77c878" }}
-      >
-        <Tooltip wrapperClassName="bg-gray-800 rounded" />
-      </Sankey>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <Sankey
+      data={data}
+      nodePadding={50}
+      margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+      link={{ stroke: "#77c878" }}
+    >
+      <Tooltip wrapperClassName="bg-gray-800 rounded" />
+    </Sankey>
+  </ResponsiveContainer>
 );
 
 export default SankeyDiagramExample;

@@ -9,7 +9,6 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 // Sample data: Activity level by day and hour
 interface HeatmapDataPoint {
@@ -44,49 +43,47 @@ const getColor = (value: number) => {
 };
 
 const HeatmapChartExample: React.FC = () => (
-  <ChartCard title="Heatmap Chart: Weekly Activity">
-    <ResponsiveContainer>
-      <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
-        <CartesianGrid stroke="#4A5568" />
-        <XAxis
-          type="number"
-          dataKey="hourIndex"
-          name="Hour"
-          domain={[0, 23]}
-          tickCount={24}
-          stroke="#A0AEC0"
-        />
-        <YAxis
-          type="number"
-          dataKey="dayIndex"
-          name="Day"
-          domain={[-1, 7]}
-          tickCount={7}
-          tickFormatter={(value) => days[value] || ""}
-          stroke="#A0AEC0"
-        />
-        <Tooltip
-          cursor={{ strokeDasharray: "3 3" }}
-          wrapperClassName="bg-gray-800 rounded"
-          formatter={(value, name) => {
-            if (name === "Day") return days[value as number];
-            return value;
-          }}
-        />
-        <Scatter data={data} shape="square">
-          {data.map((entry, index) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={getColor(entry.value)}
-              // Set the size of the square
-              width={25}
-              height={25}
-            />
-          ))}
-        </Scatter>
-      </ScatterChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+      <CartesianGrid stroke="#4A5568" />
+      <XAxis
+        type="number"
+        dataKey="hourIndex"
+        name="Hour"
+        domain={[0, 23]}
+        tickCount={24}
+        stroke="#A0AEC0"
+      />
+      <YAxis
+        type="number"
+        dataKey="dayIndex"
+        name="Day"
+        domain={[-1, 7]}
+        tickCount={7}
+        tickFormatter={(value) => days[value] || ""}
+        stroke="#A0AEC0"
+      />
+      <Tooltip
+        cursor={{ strokeDasharray: "3 3" }}
+        wrapperClassName="bg-gray-800 rounded"
+        formatter={(value, name) => {
+          if (name === "Day") return days[value as number];
+          return value;
+        }}
+      />
+      <Scatter data={data} shape="square">
+        {data.map((entry, index) => (
+          <Cell
+            key={`cell-${index}`}
+            fill={getColor(entry.value)}
+            // Set the size of the square
+            width={25}
+            height={25}
+          />
+        ))}
+      </Scatter>
+    </ScatterChart>
+  </ResponsiveContainer>
 );
 
 // Note: Recharts doesn't have a direct Cell prop for Scatter.

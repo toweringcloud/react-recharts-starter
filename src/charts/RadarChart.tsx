@@ -8,7 +8,6 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { subject: "Math", A: 120, B: 110, fullMark: 150 },
@@ -20,30 +19,28 @@ const data = [
 ];
 
 const RadarChartExample: React.FC = () => (
-  <ChartCard title="Radar Chart">
-    <ResponsiveContainer>
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-        <PolarGrid stroke="#4A5568" />
-        <PolarAngleAxis dataKey="subject" stroke="#A0AEC0" />
-        <PolarRadiusAxis angle={30} domain={[0, 150]} stroke="#A0AEC0" />
-        <Radar
-          name="Mike"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
-        />
-        <Radar
-          name="Lily"
-          dataKey="B"
-          stroke="#82ca9d"
-          fill="#82ca9d"
-          fillOpacity={0.6}
-        />
-        <Legend />
-      </RadarChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+      <PolarGrid stroke="#4A5568" />
+      <PolarAngleAxis dataKey="subject" stroke="#A0AEC0" />
+      <PolarRadiusAxis angle={30} domain={[0, 150]} stroke="#A0AEC0" />
+      <Radar
+        name="Mike"
+        dataKey="A"
+        stroke="#8884d8"
+        fill="#8884d8"
+        fillOpacity={0.6}
+      />
+      <Radar
+        name="Lily"
+        dataKey="B"
+        stroke="#82ca9d"
+        fill="#82ca9d"
+        fillOpacity={0.6}
+      />
+      <Legend />
+    </RadarChart>
+  </ResponsiveContainer>
 );
 
 export default RadarChartExample;

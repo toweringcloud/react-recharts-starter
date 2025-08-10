@@ -9,7 +9,6 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
-import ChartCard from "../layouts/ChartCard";
 
 // Sample data: study hours vs. exam scores for two different groups
 const dataGroup1 = [
@@ -31,34 +30,32 @@ const dataGroup2 = [
 ];
 
 const ScatterChartExample: React.FC = () => (
-  <ChartCard title="Scatter Chart: Study Hours vs. Exam Score">
-    <ResponsiveContainer>
-      <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-        <XAxis
-          type="number"
-          dataKey="hours"
-          name="Study Hours"
-          unit="h"
-          stroke="#A0AEC0"
-        />
-        <YAxis
-          type="number"
-          dataKey="score"
-          name="Exam Score"
-          unit="pts"
-          stroke="#A0AEC0"
-        />
-        <Tooltip
-          cursor={{ strokeDasharray: "3 3" }}
-          wrapperClassName="bg-gray-800 rounded"
-        />
-        <Legend />
-        <Scatter name="Group A" data={dataGroup1} fill="#8884d8" />
-        <Scatter name="Group B" data={dataGroup2} fill="#82ca9d" />
-      </ScatterChart>
-    </ResponsiveContainer>
-  </ChartCard>
+  <ResponsiveContainer>
+    <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+      <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
+      <XAxis
+        type="number"
+        dataKey="hours"
+        name="Study Hours"
+        unit="h"
+        stroke="#A0AEC0"
+      />
+      <YAxis
+        type="number"
+        dataKey="score"
+        name="Exam Score"
+        unit="pts"
+        stroke="#A0AEC0"
+      />
+      <Tooltip
+        cursor={{ strokeDasharray: "3 3" }}
+        wrapperClassName="bg-gray-800 rounded"
+      />
+      <Legend />
+      <Scatter name="Group A" data={dataGroup1} fill="#8884d8" />
+      <Scatter name="Group B" data={dataGroup2} fill="#82ca9d" />
+    </ScatterChart>
+  </ResponsiveContainer>
 );
 
 export default ScatterChartExample;
