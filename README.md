@@ -1,3 +1,3 @@
 # react-recharts-starter
 
-react chart challenge using recharts
+vite + react based interactive chart ui examples using recharts

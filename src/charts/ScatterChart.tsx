@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
-import ChartCard from "../layout/ChartCard";
+import ChartCard from "../layouts/ChartCard";
 
 // Sample data: study hours vs. exam scores for two different groups
 const dataGroup1 = [

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import BarChartExample from "./charts/BarChart";
 import BubbleChartExample from "./charts/BubbleChart";
@@ -13,7 +13,6 @@ import SankeyDiagramExample from "./charts/SankeyDiagramChart";
 import ScatterChartExample from "./charts/ScatterChart";
 import TreemapExample from "./charts/TreemapChart";
 
-// 요청하신 차트 메뉴 리스트
 const chartMenuList = [
   "Bar Chart",
   "Bubble Chart",
@@ -29,7 +28,7 @@ const chartMenuList = [
   "Treemap Chart",
 ];
 
-const App: React.FC = () => {
+const App = () => {
   const [selectedMenu, setSelectedMenu] = useState<string>("Bar Chart");
 
   const renderChart = () => {
@@ -68,23 +67,23 @@ const App: React.FC = () => {
       <header className="p-6 border-b border-slate-700">
         <h1 className="text-3xl font-bold">Recharts Example Dashboard</h1>
         <p className="text-slate-400 mt-1">
-          Using React, TypeScript, and Tailwind CSS
+          Using TypeScript, React, and TailwindCSS
         </p>
       </header>
 
       <div className="flex">
-        {/* Sidebar */}
-        <nav className="w-64 p-6 border-r border-slate-700">
+        {/* Sidebar Menu */}
+        <nav className="w-48 p-4 border-r border-slate-700">
           <h2 className="text-xl font-semibold mb-4">Chart Types</h2>
-          <ul>
+          <ul className="text-sm">
             {chartMenuList.map((menu) => (
               <li key={menu} className="mb-2 text-black">
                 <button
                   onClick={() => setSelectedMenu(menu)}
-                  className={`w-full text-left px-4 py-2 rounded-md transition-colors ${
+                  className={`w-full text-left hover:bg-blue-200 hover:text-black cursor-pointer rounded ${
                     selectedMenu === menu
-                      ? "bg-blue-600 text-blue-700 font-bold"
-                      : "hover:bg-slate-700 text-gray-500"
+                      ? "bg-blue-200 text-blue-700 font-bold"
+                      : "text-gray-500"
                   }`}
                 >
                   {menu}

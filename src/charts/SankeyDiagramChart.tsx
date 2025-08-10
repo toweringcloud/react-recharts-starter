@@ -1,6 +1,6 @@
 import React from "react";
 import { Sankey, Tooltip, ResponsiveContainer } from "recharts";
-import ChartCard from "../layout/ChartCard";
+import ChartCard from "../layouts/ChartCard";
 
 const data = {
   nodes: [

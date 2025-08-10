@@ -7,7 +7,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ChartCard from "../layout/ChartCard";
+import ChartCard from "../layouts/ChartCard";
 
 const data = [
   { name: "Group A", value: 400 },

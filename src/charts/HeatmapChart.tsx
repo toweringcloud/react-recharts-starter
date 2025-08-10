@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
-import ChartCard from "../layout/ChartCard";
+import ChartCard from "../layouts/ChartCard";
 
 // Sample data: Activity level by day and hour
 interface HeatmapDataPoint {
