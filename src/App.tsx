@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-import BarChart from "./charts/BarChart";
-import BubbleChart from "./charts/BubbleChart";
-import KpiForecastChart from "./charts/ForecastChart";
-import FunnelChart from "./charts/FunnelChart";
-import HeatmapChart from "./charts/HeatmapChart";
-import LineChart from "./charts/LineChart";
-import MixedChart from "./charts/MixedChart";
-import PieChart from "./charts/PieChart";
-import RadarChart from "./charts/RadarChart";
-import SankeyChart from "./charts/SankeyChart";
-import ScatterChart from "./charts/ScatterChart";
-import TreemapChart from "./charts/TreemapChart";
+import RechartBar from "./charts/BarChart";
+import RechartBubble from "./charts/BubbleChart";
+import RechartForecast from "./charts/ForecastChart";
+import RechartFunnel from "./charts/FunnelChart";
+import RechartHeatMap from "./charts/HeatmapChart";
+import RechartLine from "./charts/LineChart";
+import RechartMixed from "./charts/MixedChart";
+import RechartPie from "./charts/PieChart";
+import RechartRadar from "./charts/RadarChart";
+import RechartSankey from "./charts/SankeyChart";
+import RechartScatter from "./charts/ScatterChart";
+import RechartTreeMap from "./charts/TreemapChart";
 
 const Sidebar = ({
   chartTypes,
@@ -24,15 +24,16 @@ const Sidebar = ({
 }) => (
   <nav className="w-40 p-4 border-r border-slate-700">
     <h2 className="text-xl font-semibold mb-4">Chart Types</h2>
+    <br />
     <ul className="text-sm">
       {chartTypes.map((menu) => (
         <li key={menu} className="mb-2 text-black">
           <button
             onClick={() => setSelectedMenu(menu)}
-            className={`w-full text-left hover:bg-blue-200 hover:text-black cursor-pointer rounded ${
+            className={`w-full text-left cursor-pointer rounded ${
               selectedMenu === menu
-                ? "bg-blue-200 text-blue-700 font-bold"
-                : "text-gray-500"
+                ? "bg-blue-300 text-blue-600 font-bold"
+                : "text-gray-400 border border-gray-600 hover:border-gray-300 hover:text-blue-600"
             }`}
           >
             {menu}
@@ -62,47 +63,48 @@ const App = () => {
     "Bubble",
     "Forecast",
     "Funnel",
-    "Heatmap",
+    "HeatMap",
     "Line",
     "Mixed",
     "Pie",
     "Radar",
     "Sankey",
     "Scatter",
-    "Treemap",
+    "TreeMap",
   ];
   const [selectedChart, setSelectedChart] = useState<string>(chartTypes[0]);
 
   const chartComponents: { [key: string]: React.ReactElement } = {
-    Bar: <BarChart />,
-    Bubble: <BubbleChart />,
-    Forecast: <KpiForecastChart />,
-    Funnel: <FunnelChart />,
-    HeatMap: <HeatmapChart />,
-    Line: <LineChart />,
-    Mixed: <MixedChart />,
-    Pie: <PieChart />,
-    Radar: <RadarChart />,
-    Sankey: <SankeyChart />,
-    Scatter: <ScatterChart />,
-    TreeMap: <TreemapChart />,
+    Bar: <RechartBar />,
+    Bubble: <RechartBubble />,
+    Forecast: <RechartForecast />,
+    Funnel: <RechartFunnel />,
+    HeatMap: <RechartHeatMap />,
+    Line: <RechartLine />,
+    Mixed: <RechartMixed />,
+    Pie: <RechartPie />,
+    Radar: <RechartRadar />,
+    Sankey: <RechartSankey />,
+    Scatter: <RechartScatter />,
+    TreeMap: <RechartTreeMap />,
   };
 
   return (
     <div className="bg-slate-900 text-white min-h-screen font-sans">
       <header className="p-6 border-b border-slate-700 mb-4">
-        <h1 className="text-3xl font-bold">Recharts Example Dashboard</h1>
+        <h1 className="text-3xl font-bold">Recharts Sample Dashboard</h1>
         <p className="text-slate-400 mt-1">
           Using TypeScript, React, and TailwindCSS
         </p>
       </header>
-      <div className="flex">
+      <br />
+      <div className="flex gap-4">
         <Sidebar
           chartTypes={chartTypes}
           selectedMenu={selectedChart}
           setSelectedMenu={setSelectedChart}
         />
-        <main className="flex-1 p-6 lg:p-10">
+        <main className="flex-1 p-8 overflow-auto w-160 h-160">
           <ChartCard title={`${selectedChart} Chart`}>
             {chartComponents[selectedChart]}
           </ChartCard>
